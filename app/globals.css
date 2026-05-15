@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body {
+  @apply bg-black text-bone antialiased;
+  background-image: radial-gradient(circle at 20% 10%, rgba(213,159,74,.15), transparent 30%), radial-gradient(circle at 80% 20%, rgba(255,255,255,.06), transparent 20%);
+}
+.noise::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.08;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+.panel{@apply border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-luxe rounded-2xl;}
